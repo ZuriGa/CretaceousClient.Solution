@@ -1,0 +1,12 @@
+@{
+  ViewData["Title"] = "Animals";
+}
+
+<h1>All Cretaceous Animals:</h1>
+
+<ol>
+  @foreach (Animal animal in Model)
+  {
+    <li><strong>@animal.Name</strong> the @animal.Species | <a href="/Animals/Details/@(animal.AnimalId)">View Details</a></li>
+  }
+</ol>
