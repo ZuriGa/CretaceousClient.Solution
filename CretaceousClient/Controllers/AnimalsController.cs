@@ -16,4 +16,16 @@ public class AnimalsController : Controller
     Animal animal = Animal.GetDetails(id);
     return View(animal);
   }
+
+  public ActionResult Create()
+  {
+    return View();
+  }
+
+  [HttpPost]
+  public ActionResult Create(Animal animal)
+  {
+    Animal.Post(animal);
+    return RedirectToAction("Index");
+  }
 }
